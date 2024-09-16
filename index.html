@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <style id="app-styles">
+      @layer host {
+        * {
+          font-family: sans-serif;
+        }
+        .app {
+          border: 1px dashed red;
+          padding: 1rem;
+        }
+        .custom-element-wrapper {
+          margin-top: 1rem;
+        }
+        button {
+          background-color: #007bff;
+          color: white;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 0.25rem;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Scoped Styles Demo</h1>
+      <div class="wrapper">
+        <div class="app">
+          <h2>Host App</h2>
+          <button id="apply-styles">Apply scoped style to child app button</button>
+          <div class="app custom-element-wrapper">
+            <h3>Child app</h3>
+            <my-custom-element></my-custom-element>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

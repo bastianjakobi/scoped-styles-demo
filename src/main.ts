@@ -1,8 +1,22 @@
-import { defineCustomElement, injectElementStyle } from "./counter.ts";
+import { BaseComponent } from "./base-component.ts";
 
-defineCustomElement();
+customElements.define("app-component", BaseComponent);
 
-// Ensure document is loaded before trying to attach event listeners
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("apply-styles")?.addEventListener("click", injectElementStyle);
+  const appContainer = document.getElementById("app-container");
+
+  document.getElementById("show-a")?.addEventListener("click", () => {
+    appContainer!.innerHTML = `
+    <h3 class="mt-0 text-muted">App A</h3>
+    <app-component app-id="app-a" color="red"></app-component>
+    `;
+  });
+
+  document.getElementById("show-b")?.addEventListener("click", () => {
+    appContainer!.innerHTML = `
+    <h3 class="mt-0 text-muted">App B</h3>
+    <app-component app-id="app-b" color="green"></app-component>
+    `;
+  });
+
 });

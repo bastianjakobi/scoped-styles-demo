@@ -1,0 +1,9 @@
+@layer host {
+    * {
+      font-family: sans-serif;
+    }
+    .app {
+      border: 1px dashed red;
+      padding: 1rem;
+    }
+}
